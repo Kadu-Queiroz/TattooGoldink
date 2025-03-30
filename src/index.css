@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  @apply bg-primary text-white;
+  background-image: url('https://images.unsplash.com/photo-1590246815117-ea8e34f8f050?q=80&w=2070');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.swiper-pagination-bullet {
+  @apply bg-gold/50 !important;
+}
+
+.swiper-pagination-bullet-active {
+  @apply bg-gold !important;
+}
+
+.image-gallery-slide {
+  @apply bg-black/50;
+}
+
+.image-gallery-thumbnail.active {
+  @apply border-gold;
+}
+
+section {
+  @apply relative;
+  background-color: rgba(10, 10, 10, 0.85);
+  backdrop-filter: blur(10px);
+}
