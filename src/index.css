@@ -13,12 +13,8 @@
    🔤 Typography & Layout
 ================================= */
 body {
-  @apply bg-primary text-white antialiased;
-  background-image: url('https://images.unsplash.com/photo-1590246815117-ea8e34f8f050?q=80&w=2070');
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  scroll-behavior: smooth;
+  @apply bg-primary text-white;
+
 }
 
 /* ================================
