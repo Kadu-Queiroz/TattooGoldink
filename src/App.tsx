@@ -1,16 +1,15 @@
 import React from 'react';
 import { ParticlesBackground } from '@/components/ParticlesBackground';
-import { HeroSection } from '@/components/HeroSection/HeroSection';
-import { ArtistsSection, artists } from '@/components/artists';
+import { InkTrail } from '@/components/Cursor/InkTrail';
+import { ArtistsSection } from '@/components/artists/ArtistsSection';
 import { WhatsAppButton } from '@/components/Contact/WhatsAppButton';
 import { VirtualTour } from '@/components/features/VirtualTour';
 import { Footer } from '@/components/Footer';
 
-
 function App() {
   return (
-    <div className="min-h-screen bg-primary text-white">
-      {/* Background visual estático */}
+    <div className="min-h-screen bg-primary text-white overflow-hidden">
+      {/* Background decorativo fixo */}
       <div
         className="fixed inset-0 z-0 opacity-10"
         style={{
@@ -20,8 +19,9 @@ function App() {
         }}
       />
 
-      {/* Partículas animadas */}
+      {/* Efeito de partículas e rastro de tinta */}
       <ParticlesBackground />
+      <InkTrail />
 
       {/* Cabeçalho fixo */}
       <header className="fixed top-0 left-0 right-0 z-50 bg-primary/80 backdrop-blur-sm">
@@ -32,16 +32,13 @@ function App() {
         </div>
       </header>
 
-      {/* Hero Section */}
-      <HeroSection />
-
       {/* Conteúdo principal */}
-      <main className="relative z-10">
-        <ArtistsSection/>
+      <main className="relative z-10 pt-24">
+        <ArtistsSection />
         <VirtualTour />
       </main>
 
-      {/* Rodapé com localização e infos */}
+      {/* Rodapé */}
       <Footer />
 
       {/* Botão flutuante do WhatsApp */}

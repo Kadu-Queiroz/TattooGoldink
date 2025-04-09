@@ -1,17 +1,9 @@
-import { useCallback } from "react";
-import { Container, Engine } from "@tsparticles/engine";
-import { loadSlim } from "@tsparticles/slim";
 import Particles from "@tsparticles/react";
 
 export function ParticlesBackground() {
-  const particlesInit = useCallback(async (engine: Engine) => {
-    await loadSlim(engine);
-  }, []);
-
   return (
     <Particles
       id="tsparticles"
-      init={particlesInit}
       options={{
         background: {
           opacity: 0,
@@ -32,11 +24,10 @@ export function ParticlesBackground() {
             speed: 1,
           },
           number: {
+            value: 80,
             density: {
               enable: true,
-              area: 800,
             },
-            value: 80,
           },
           opacity: {
             value: 0.3,

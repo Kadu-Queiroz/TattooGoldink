@@ -2,26 +2,39 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ================================
+   🌒 Base Theme
+================================= */
 :root {
   color-scheme: dark;
 }
 
+/* ================================
+   🔤 Typography & Layout
+================================= */
 body {
-  @apply bg-primary text-white;
+  @apply bg-primary text-white antialiased;
   background-image: url('https://images.unsplash.com/photo-1590246815117-ea8e34f8f050?q=80&w=2070');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
+  scroll-behavior: smooth;
 }
 
+/* ================================
+   🌀 Swiper Customization
+================================= */
 .swiper-pagination-bullet {
-  @apply bg-gold/50 !important;
+  @apply bg-gold/50 transition-opacity duration-300 !important;
 }
 
 .swiper-pagination-bullet-active {
   @apply bg-gold !important;
 }
 
+/* ================================
+   🖼️ Image Gallery
+================================= */
 .image-gallery-slide {
   @apply bg-black/50;
 }
@@ -30,8 +43,12 @@ body {
   @apply border-gold;
 }
 
+/* ================================
+   📦 Global Section Styling
+================================= */
 section {
   @apply relative;
   background-color: rgba(10, 10, 10, 0.85);
   backdrop-filter: blur(10px);
+  padding-block: 4rem;
 }
