@@ -6,6 +6,24 @@ import Renan_BG from '@assets/background/Renan_BG.png'
 import Tattoo1 from '@assets/portifolio/Renan_1.png'
 import Tattoo2 from '@assets/portifolio/Renan_2.png'
 import Tattoo3 from '@assets/portifolio/Renan_3.png'
+//VitorImports
+import IcoVitor from '@assets/artista/Moldura_Vitor.png'
+import Vitor_BG from '@assets/background/Vitor_BG.png'
+import Tattoo4 from '@assets/portifolio/Vitor_1.png'
+import Tattoo5 from '@assets/portifolio/Vitor_2.png'
+import Tattoo6 from '@assets/portifolio/Vitor_3.png'
+//ThiagoImports
+import IcoThiago from '@assets/artista/Moldura_Thiago.png'
+import Thiago_BG from '@assets/background/Thiago_BG.png'
+import Tattoo7 from '@assets/portifolio/Thiago_1.png'
+import Tattoo8 from '@assets/portifolio/Thiago_2.png'
+import Tattoo9 from '@assets/portifolio/Thiago_3.png'
+//PavaniImports
+import IcoPavani from '@assets/artista/Moldura_Pavani.png'
+import Pavani_BG from '@assets/background/Pavani_BG.png'
+import Tattoo10 from '@assets/portifolio/Pavani_1.png'
+import Tattoo11 from '@assets/portifolio/Pavani_2.png'
+import Tattoo12 from '@assets/portifolio/Pavani_3.png'
 
 
 export const artists: Artist[] = [
@@ -46,26 +64,34 @@ export const artists: Artist[] = [
     ],
   },
   {
-    id: 'carol',
-    name: 'Carol Mendes',
-    photo: 'https://randomuser.me/api/portraits/women/68.jpg',
-    backgroundArt: 'https://images.unsplash.com/photo-1544168190-79c17527004f',
+    id: 'vitor',
+    name: 'Vitor',
+    photo: IcoVitor,
+    backgroundArt: Vitor_BG,
     bio: 'Especialista em fineline e florais delicados. Traz leveza em cada traço.',
     specialty: 'Fineline / Florais',
     instagram: 'carolm_ink',
     whatsapp: '5598888888888',
     portfolio: [
       {
-        id: 'carol-1',
-        url: 'https://images.unsplash.com/photo-1627844541298-892d4dbb7b7c',
+        id: 'vitor-1',
+        url: Tattoo4,
         title: 'Flor minimalista',
         style: 'Fineline',
         bodyPart: 'Costela',
         description: 'Traços finos e elegantes de flor única.',
       },
       {
-        id: 'carol-2',
-        url: 'https://images.unsplash.com/photo-1623057061623-51b07dff9e92',
+        id: 'vitor-2',
+        url: Tattoo5,
+        title: 'Composição floral',
+        style: 'Fineline',
+        bodyPart: 'Coluna',
+        description: 'Sequência de flores seguindo a linha da coluna.',
+      },
+      {
+        id: 'vitor-3',
+        url: Tattoo6,
         title: 'Composição floral',
         style: 'Fineline',
         bodyPart: 'Coluna',
@@ -74,26 +100,34 @@ export const artists: Artist[] = [
     ],
   },
   {
-    id: 'lucas',
-    name: 'Lucas R.',
-    photo: 'https://randomuser.me/api/portraits/men/76.jpg',
-    backgroundArt: 'https://images.unsplash.com/photo-1594756207943-e5f8d1cdb027',
-    bio: 'Mistura estilos orientais e neotradicionais com muita cor e contraste.',
+    id: 'thiago',
+    name: 'Thiago',
+    photo: IcoThiago,
+    backgroundArt: Thiago_BG,
+    bio: 'Com mais de 10 anos de experiência, Thiago é um mestre do realismo e do blackwork.',
     specialty: 'Oriental / Neotradicional',
     instagram: 'lucasr_tattoo',
     whatsapp: '5599777777777',
     portfolio: [
       {
-        id: 'lucas-1',
-        url: 'https://images.unsplash.com/photo-1591738502956-b2bdedb9df1d',
+        id: 'thiago-1',
+        url: Tattoo7,
         title: 'Dragão oriental',
         style: 'Oriental',
         bodyPart: 'Costas',
         description: 'Dragão colorido envolvendo o dorso.',
       },
       {
-        id: 'lucas-2',
-        url: 'https://images.unsplash.com/photo-1612197583313-ec63c8c87d1e',
+        id: 'thiago-2',
+        url: Tattoo8,
+        title: 'Caveira colorida',
+        style: 'Neotradicional',
+        bodyPart: 'Peitoral',
+        description: 'Caveira estilizada com rosas e ornamentos.',
+      },
+      {
+        id: 'thiago-3',
+        url: Tattoo9,
         title: 'Caveira colorida',
         style: 'Neotradicional',
         bodyPart: 'Peitoral',
@@ -102,26 +136,34 @@ export const artists: Artist[] = [
     ],
   },
   {
-    id: 'lara',
-    name: 'Lara Dias',
-    photo: 'https://randomuser.me/api/portraits/women/12.jpg',
-    backgroundArt: 'https://images.unsplash.com/photo-1588436706487-9d55d73a39e3',
+    id: 'pavani',
+    name: 'Pavani',
+    photo: IcoPavani,
+    backgroundArt: Pavani_BG,
     bio: 'Focada em micro realismo e arte botânica, Lara transforma detalhes em impacto.',
     specialty: 'Micro realismo / Botânica',
     instagram: 'laradias.ink',
     whatsapp: '5599666666666',
     portfolio: [
       {
-        id: 'lara-1',
-        url: 'https://images.unsplash.com/photo-1541599540903-216a46ca9b81',
+        id: 'pavani-1',
+        url: Tattoo10,
         title: 'Rosa em close',
         style: 'Botânica',
         bodyPart: 'Antebraço',
         description: 'Rosa detalhada com sombreamento leve.',
       },
       {
-        id: 'lara-2',
-        url: 'https://images.unsplash.com/photo-1581427502889-050f162d0b72',
+        id: 'pavani-2',
+        url: Tattoo11,
+        title: 'Olho realista',
+        style: 'Micro realismo',
+        bodyPart: 'Pulso',
+        description: 'Olho com precisão de sombra e brilho.',
+      },
+      {
+        id: 'pavani-3',
+        url: Tattoo12,
         title: 'Olho realista',
         style: 'Micro realismo',
         bodyPart: 'Pulso',
