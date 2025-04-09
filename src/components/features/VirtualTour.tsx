@@ -29,7 +29,7 @@ export function VirtualTour() {
   const { ref, inView } = useInView({ threshold: 0.1, triggerOnce: true });
 
   return (
-    <section ref={ref} className="relative z-10 py-24 bg-black/30">
+    <section ref={ref} className="relative z-layer-section py-24 bg-black/30">
       <div className="container mx-auto px-4">
         {/* Título e descrição */}
         <motion.div
