@@ -11,9 +11,10 @@ export default {
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
         display: ['Playfair Display', 'serif'],
+        tattoo: ['UnifrakturCook', 'cursive'],
       },
       animation: {
-        'float': 'float 6s ease-in-out infinite',
+        float: 'float 6s ease-in-out infinite',
       },
       keyframes: {
         float: {
