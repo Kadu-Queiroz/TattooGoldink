@@ -5,6 +5,7 @@ import { VirtualTour } from '@/components/features/VirtualTour';
 import { Footer } from '@/components/Footer';
 
 import RenanBG from '@/assets/background/Renan_BG.png';
+import Logo from '@assets/LogotesteTattoo.png';
 
 function App() {
   return (

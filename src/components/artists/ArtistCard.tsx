@@ -11,25 +11,31 @@ export function ArtistCard({ artist }: ArtistCardProps) {
   const { openModal } = useArtistModal();
 
   const handleCardClick = () => openModal(artist);
-  const handleSocialClick = (e: React.MouseEvent<HTMLAnchorElement>) => e.stopPropagation();
+  const handleSocialClick = (e: React.MouseEvent<HTMLAnchorElement>) =>
+    e.stopPropagation();
 
   return (
     <motion.div
-      whileHover={{ scale: 1.02 }}
+      whileHover={{ scale: 1.03 }}
       whileTap={{ scale: 0.97 }}
       transition={{ type: 'spring', stiffness: 250, damping: 18 }}
       onClick={handleCardClick}
       role="button"
       tabIndex={0}
       aria-label={`Ver detalhes de ${artist.name}`}
-      className="relative bg-black/60 hover:bg-black/70 transition-all duration-300 rounded-xl overflow-hidden shadow-xl cursor-pointer group"
+      className="relative w-full max-w-[460px] 
+        bg-black/70 backdrop-blur-md 
+        rounded-2xl overflow-hidden shadow-xl cursor-pointer group
+        border border-amber-500/30 hover:border-amber-400/60
+        hover:shadow-[0_0_24px_rgba(255,191,0,0.3)]
+        transition-all duration-300"
     >
-      {/* Background Image */}
+      {/* Fundo artístico */}
       <div className="absolute inset-0 -z-10">
         <img
           src={artist.backgroundArt}
           alt={`Fundo artístico de ${artist.name}`}
-          className="w-full h-full object-cover opacity-30"
+          className="w-full h-full object-cover opacity-20"
           loading="lazy"
           onError={(e) => {
             (e.target as HTMLImageElement).src = '/fallback-tattoo.jpg';
@@ -38,9 +44,10 @@ export function ArtistCard({ artist }: ArtistCardProps) {
         <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/70 to-black" />
       </div>
 
-      <div className="flex flex-col justify-between p-6 h-full text-white text-center">
-        {/* Foto do artista */}
-        <div className="w-full h-56 overflow-hidden rounded-lg shadow-md mb-4">
+      {/* Conteúdo */}
+      <div className="flex flex-col justify-between px-6 pt-6 pb-4 text-white text-center flex-grow">
+        {/* Imagem do artista */}
+        <div className="w-full h-[360px] overflow-hidden rounded-xl shadow-inner mb-5">
           <img
             src={artist.photo}
             alt={`Foto de ${artist.name}`}
@@ -53,36 +60,36 @@ export function ArtistCard({ artist }: ArtistCardProps) {
         </div>
 
         {/* Nome e especialidade */}
-        <header className="space-y-1">
-          <h3 className="text-xl font-bold">{artist.name}</h3>
+        <header className="space-y-1 mb-4">
+          <h3 className="text-2xl font-extrabold">{artist.name}</h3>
           {artist.specialty && (
-            <p className="text-amber-400 text-xs uppercase tracking-wider">
+            <p className="text-amber-400 text-sm uppercase tracking-wider">
               {artist.specialty}
             </p>
           )}
         </header>
 
-        {/* Ações / Social */}
+        {/* Redes sociais */}
         <section className="mt-4 flex justify-center gap-4">
           <a
             href={`https://instagram.com/${artist.instagram}`}
             target="_blank"
             rel="noopener noreferrer"
             onClick={handleSocialClick}
-            className="text-amber-400 hover:text-white transition-colors p-2 rounded-full hover:bg-white/10"
+            className="text-amber-400 hover:text-white transition-colors p-3 rounded-full hover:bg-white/10"
             aria-label={`Instagram de ${artist.name}`}
           >
-            <Instagram size={20} />
+            <Instagram size={28} />
           </a>
           <a
             href={`https://wa.me/${artist.whatsapp}`}
             target="_blank"
             rel="noopener noreferrer"
             onClick={handleSocialClick}
-            className="text-amber-400 hover:text-white transition-colors p-2 rounded-full hover:bg-white/10"
+            className="text-amber-400 hover:text-white transition-colors p-3 rounded-full hover:bg-white/10"
             aria-label={`WhatsApp de ${artist.name}`}
           >
-            <MessageCircle size={20} />
+            <MessageCircle size={28} />
           </a>
         </section>
       </div>

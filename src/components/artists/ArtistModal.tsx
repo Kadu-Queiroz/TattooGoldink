@@ -1,5 +1,11 @@
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, Instagram, MessageCircle, ChevronLeft, ChevronRight } from 'lucide-react';
+import {
+  X,
+  Instagram,
+  MessageCircle,
+  ChevronLeft,
+  ChevronRight
+} from 'lucide-react';
 import ImageGallery, { type ReactImageGalleryItem } from 'react-image-gallery';
 import { useEffect, useState, useCallback, useMemo } from 'react';
 import { useArtistModal } from '@/hooks/useArtistModal';
@@ -62,25 +68,20 @@ export function ArtistModal() {
           closeModal={closeModal}
           setExpandedImage={setExpandedImage}
         />
-
         {expandedImage && (
-          <ExpandedImage
-            imageUrl={expandedImage}
-            onClose={() => setExpandedImage(null)}
-          />
+          <ExpandedImage imageUrl={expandedImage} onClose={() => setExpandedImage(null)} />
         )}
       </ModalOverlay>
     </AnimatePresence>
   );
 }
 
-// Componentes auxiliares
 const ModalOverlay = ({ children, closeModal }: { children: React.ReactNode; closeModal: () => void }) => (
   <motion.div
     initial={{ opacity: 0 }}
     animate={{ opacity: 1 }}
     exit={{ opacity: 0 }}
-    className="fixed inset-0 z-layer-modal flex items-center justify-center bg-black/80 backdrop-blur-sm p-4"
+    className="fixed inset-0 z-layer-modal flex items-center justify-center bg-black/80 backdrop-blur-md p-4"
     onClick={closeModal}
     role="dialog"
     aria-modal="true"
@@ -111,22 +112,20 @@ const ModalContent = ({
     animate={{ scale: 1, y: 0 }}
     exit={{ scale: 0.95, y: 40 }}
     transition={{ type: 'spring', damping: 25 }}
-    className="relative bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white rounded-2xl w-full max-w-5xl h-[85vh] shadow-[0_0_50px_rgba(0,0,0,0.6)] border border-black/30 overflow-hidden flex flex-col"
+    className="relative bg-black/80 backdrop-blur-md text-white rounded-3xl w-full max-w-5xl h-[85vh] shadow-[0_0_50px_rgba(255,215,0,0.15)] border border-amber-600/30 overflow-hidden flex"
     onClick={(e) => e.stopPropagation()}
   >
     <CloseButton onClick={closeModal} />
-    
-    <NavigationButtons 
+    <NavigationButtons
       currentIndex={currentIndex}
       artistsLength={artists.length}
       goToPrev={goToPrev}
       goToNext={goToNext}
     />
-
-    <div className="flex flex-col md:flex-row h-full">
+    <div className="flex flex-col md:flex-row w-full h-full">
       <ArtistProfile artist={selectedArtist} />
-      <Gallery 
-        items={galleryItems} 
+      <Gallery
+        items={galleryItems}
         portfolioLength={selectedArtist.portfolio.length}
         onImageClick={(e: any) => setExpandedImage(e.target?.src || null)}
       />
@@ -144,12 +143,7 @@ const CloseButton = ({ onClick }: { onClick: () => void }) => (
   </button>
 );
 
-const NavigationButtons = ({
-  currentIndex,
-  artistsLength,
-  goToPrev,
-  goToNext
-}: {
+const NavigationButtons = ({ currentIndex, artistsLength, goToPrev, goToNext }: {
   currentIndex: number;
   artistsLength: number;
   goToPrev: () => void;
@@ -160,56 +154,51 @@ const NavigationButtons = ({
       <button
         onClick={goToPrev}
         className="absolute top-1/2 left-2 -translate-y-1/2 z-10 p-2 rounded-full bg-white/10 hover:bg-white/20 hover:ring-2 hover:ring-amber-500 transition"
-        aria-label="Anterior"
+        aria-label="Artista anterior"
       >
-        <ChevronLeft size={24} />
+        <ChevronLeft size={28} />
       </button>
     )}
-
     {currentIndex < artistsLength - 1 && (
       <button
         onClick={goToNext}
         className="absolute top-1/2 right-2 -translate-y-1/2 z-10 p-2 rounded-full bg-white/10 hover:bg-white/20 hover:ring-2 hover:ring-amber-500 transition"
-        aria-label="Próximo"
+        aria-label="Próximo artista"
       >
-        <ChevronRight size={24} />
+        <ChevronRight size={28} />
       </button>
     )}
   </>
 );
 
 const ArtistProfile = ({ artist }: { artist: typeof artists[0] }) => (
-  <div className="md:w-[38%] p-6 md:p-8 bg-gray-800 overflow-y-auto scrollbar-thin scrollbar-thumb-amber-700/60 scrollbar-track-transparent">
+  <div className="md:w-[38%] p-6 md:p-8 bg-gradient-to-br from-black via-zinc-900 to-black border-r border-amber-500/20 overflow-y-auto custom-scrollbar">
     <div className="flex flex-col items-center text-center mb-6">
       <img
         src={artist.photo}
         alt={`Foto de ${artist.name}`}
-        className="w-full max-w-xs rounded-xl object-cover border-4 border-amber-500 mb-4 shadow-xl"
+        className="w-full max-w-xs rounded-xl object-cover border-4 border-amber-500/60 mb-4 shadow-lg"
       />
-      <h2 id="artist-modal-title" className="text-2xl font-bold">
-        {artist.name}
-      </h2>
+      <h2 className="text-3xl font-semibold text-amber-400">{artist.name}</h2>
       {artist.specialty && (
-        <p className="text-amber-400 mt-1 text-sm uppercase tracking-wide">
+        <p className="text-amber-300 mt-1 text-sm uppercase tracking-wide">
           {artist.specialty}
         </p>
       )}
     </div>
-
-    <div className="text-sm text-gray-300 mb-6 max-h-32 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-700/50 scrollbar-track-transparent">
+    <div className="text-sm text-gray-300 mb-6 max-h-32 overflow-y-auto custom-scrollbar">
       <p>{artist.bio}</p>
     </div>
-
-    <div className="flex justify-center gap-4 pt-4 border-t border-gray-600">
+    <div className="flex justify-center gap-6 pt-4 border-t border-amber-600/20">
       <SocialLink
         href={`https://instagram.com/${artist.instagram}`}
-        icon={<Instagram size={20} />}
+        icon={<Instagram size={28} />}
         text={`@${artist.instagram}`}
       />
       <SocialLink
         href={`https://wa.me/${artist.whatsapp}`}
-        icon={<MessageCircle size={20} />}
-        text="Contato"
+        icon={<MessageCircle size={28} />}
+        text="WhatsApp"
       />
     </div>
   </div>
@@ -223,29 +212,31 @@ const SocialLink = ({ href, icon, text }: { href: string; icon: React.ReactNode;
     className="flex items-center gap-2 text-amber-400 hover:text-amber-300 transition"
   >
     {icon}
-    <span>{text}</span>
+    <span className="text-base">{text}</span>
   </a>
 );
 
-const Gallery = ({ items, portfolioLength, onImageClick }: { 
-  items: ReactImageGalleryItem[]; 
+const Gallery = ({
+  items,
+  portfolioLength,
+  onImageClick
+}: {
+  items: ReactImageGalleryItem[];
   portfolioLength: number;
   onImageClick: (e: any) => void;
 }) => (
-  <div className="md:w-[62%] bg-gray-900 p-4 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-700/50 scrollbar-track-transparent">
-    <div className="h-full flex flex-col">
-      <div className="flex-grow flex items-center justify-center h-[60vh]">
-        <ImageGallery
-          items={items}
-          showPlayButton={false}
-          showFullscreenButton={false}
-          showNav={true}
-          showBullets={portfolioLength > 5}
-          lazyLoad={true}
-          additionalClass="artist-gallery w-full h-full"
-          onClick={onImageClick}
-        />
-      </div>
+  <div className="md:w-[62%] bg-black/70 backdrop-blur-lg border-l border-amber-500/10 p-4 flex flex-col overflow-y-auto custom-scrollbar">
+    <div className="flex-grow flex items-center justify-center">
+      <ImageGallery
+        items={items}
+        showPlayButton={false}
+        showFullscreenButton={false}
+        showNav={true}
+        showBullets={portfolioLength > 5}
+        lazyLoad={true}
+        additionalClass="artist-gallery w-full h-full"
+        onClick={onImageClick}
+      />
     </div>
   </div>
 );

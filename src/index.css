@@ -61,12 +61,7 @@ body {
 /* ================================
    📦 Global Section Styling
 ================================= */
-section {
-  @apply relative;
-  background-color: rgba(10, 10, 10, 0.85);
-  backdrop-filter: blur(10px);
-  padding-block: 4rem;
-}
+
 
 /* ================================
    🏗️ Z-Index Layers
@@ -142,5 +137,14 @@ section {
   }
   .custom-scrollbar-amber {
     @apply scrollbar-thin scrollbar-thumb-amber-700/60 scrollbar-track-transparent;
+  }
+}
+/* ================================
+   🎯 Artist Modal Overlay Spacing
+================================= */
+@layer components {
+  .modal-overlay {
+    @apply fixed inset-0 z-layer-modal flex justify-center items-center 
+           bg-black/80 backdrop-blur-sm p-4 py-12 overflow-y-auto;
   }
 }

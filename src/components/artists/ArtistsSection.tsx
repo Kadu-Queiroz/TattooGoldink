@@ -7,7 +7,7 @@ const containerVariants = {
   hidden: {},
   visible: {
     transition: {
-      staggerChildren: 0.1,
+      staggerChildren: 0.12,
     },
   },
 };
@@ -21,12 +21,13 @@ export function ArtistsSection() {
   return (
     <section
       id="artists"
-      className="py-24 bg-gradient-to-b from-primary/95 to-primary/80"
+      className="bg-gradient-to-b from-primary/95 to-primary/80 py-28"
     >
-      <div className="container mx-auto max-w-screen-xl px-8">
-        <h2 className="text-4xl font-display text-center mb-12">
-          Nossos Artistas
+      <div className="mx-auto max-w-[1440px] px-6">
+        <h2 className="text-4xl md:text-5xl font-display text-center mb-16 tracking-wide text-white">
+          Artistas da Gold Ink
         </h2>
+
         <motion.div
           className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6"
           variants={containerVariants}
@@ -34,18 +35,14 @@ export function ArtistsSection() {
           animate="visible"
         >
           {artists.map((artist) => (
-            <motion.div
-              key={artist.id}
-              variants={itemVariants}
-              className="flex justify-center"
-            >
+            <motion.div key={artist.id} variants={itemVariants}>
               <ArtistCard artist={artist} />
             </motion.div>
           ))}
         </motion.div>
       </div>
+
       <ArtistModal />
     </section>
-
   );
 }
