@@ -19,7 +19,7 @@ const itemVariants = {
 
 export function ArtistsSection() {
   return (
-    <section id="artists" className="py-28">
+    <section id="artists" className="pt-4 pb-28">
       <div className="mx-auto max-w-[1440px] px-6 section-container">
         <h2 className="text-4xl md:text-5xl font-display text-center mb-16 tracking-wide text-white">
           Artistas

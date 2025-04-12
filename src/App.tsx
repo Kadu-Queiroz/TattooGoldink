@@ -11,12 +11,13 @@ function App() {
     <div className="min-h-screen text-white overflow-hidden relative font-sans bg-zinc-900">
       <ParticlesBackground />
 
+      {/* Header fixo com estilo minimalista */}
       <header className="fixed top-0 left-0 right-0 z-layer-header bg-black/50 backdrop-blur-md border-b border-amber-500">
-        <div className="container mx-auto px-4 py-4 flex justify-center items-center">
-        </div>
+        <div className="container mx-auto px-4 py-4 flex justify-center items-center" />
       </header>
 
-      <div className="pt-24 flex flex-col items-center z-layer-section">
+      {/* Logo fixo no topo com margem inferior menor */}
+      <div className="pt-16 flex flex-col items-center z-layer-section mb-8">
         <img
           src={logo}
           alt="Logo Gold Ink Tattoo"
@@ -25,7 +26,8 @@ function App() {
         <hr className="w-32 border-t-2 border-amber-500 mt-4 opacity-70" />
       </div>
 
-      <main className="relative z-10 pt-20">
+      {/* Conteúdo principal agora SEM padding superior */}
+      <main className="relative z-10">
         <ArtistsSection />
         <VirtualTour />
       </main>
