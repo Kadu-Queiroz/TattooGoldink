@@ -25,12 +25,12 @@ const ArtistProfile = ({ artist }: { artist: typeof artists[0] }) => (
 
     <div className="flex justify-center gap-6 pt-4 border-t border-gray-600">
       <SocialLink
-        href={`https://instagram.com/${artist.instagram}`}
+        href={`https://www.instagram.com/renanteixeiratattoo/`}
         icon={<Instagram size={28} />}
-        text={`@${artist.instagram}`}
+        text={`@renanteixeiratattoo`}
       />
       <SocialLink
-        href={`https://wa.me/${artist.whatsapp}`}
+        href={`https://wa.me/5511971748413`}
         icon={<MessageCircle size={28} />}
         text="WhatsApp"
       />

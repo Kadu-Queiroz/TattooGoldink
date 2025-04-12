@@ -12,7 +12,7 @@ function App() {
       <ParticlesBackground />
 
       <header className="fixed top-0 left-0 right-0 z-layer-header bg-black/50 backdrop-blur-md border-b border-amber-500">
-        <div className="container mx-auto px-4 py-4 flex justify-center items-center" />
+        <div className="container mx-auto px-4 py-6 flex justify-center items-center" />
       </header>
 
       <div className="pt-16 flex flex-col items-center z-layer-section mb-8">

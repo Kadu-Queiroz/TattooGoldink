@@ -30,7 +30,6 @@ export function ArtistCard({ artist }: ArtistCardProps) {
         hover:shadow-[0_0_24px_rgba(255,191,0,0.3)]
         transition-all duration-300"
     >
-      {/* Fundo artístico */}
       <div className="absolute inset-0 -z-10">
         <img
           src={artist.backgroundArt}
@@ -44,9 +43,7 @@ export function ArtistCard({ artist }: ArtistCardProps) {
         <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/70 to-black" />
       </div>
 
-      {/* Conteúdo */}
       <div className="flex flex-col justify-between px-6 pt-6 pb-4 text-white text-center flex-grow">
-        {/* Imagem do artista */}
         <div className="w-full h-[360px] overflow-hidden rounded-xl shadow-inner mb-5">
           <img
             src={artist.photo}
@@ -59,7 +56,6 @@ export function ArtistCard({ artist }: ArtistCardProps) {
           />
         </div>
 
-        {/* Nome e especialidade */}
         <header className="space-y-1 mb-4">
           <h3 className="text-2xl font-extrabold">{artist.name}</h3>
           {artist.specialty && (
@@ -69,10 +65,9 @@ export function ArtistCard({ artist }: ArtistCardProps) {
           )}
         </header>
 
-        {/* Redes sociais */}
         <section className="mt-4 flex justify-center gap-4">
           <a
-            href={`https://instagram.com/${artist.instagram}`}
+            href={`https://www.instagram.com/renanteixeiratattoo/`}
             target="_blank"
             rel="noopener noreferrer"
             onClick={handleSocialClick}
@@ -82,7 +77,7 @@ export function ArtistCard({ artist }: ArtistCardProps) {
             <Instagram size={28} />
           </a>
           <a
-            href={`https://wa.me/${artist.whatsapp}`}
+            href={`https://wa.me/5511971748413`}
             target="_blank"
             rel="noopener noreferrer"
             onClick={handleSocialClick}
