@@ -7,19 +7,24 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import 'swiper/css/effect-fade';
 
+//Img imports
+import AreaTrabalho from '@/assets/VirtualTour/areadetrabalho.webp';
+import Recepcao from '@/assets/VirtualTour/frontdesk.jpeg';
+import SalaConsulta from '@/assets/VirtualTour/saladetattoo.jpg';
+
 const tourImages = [
   {
-    url: 'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=2070&q=80',
+    url: Recepcao,
     title: 'Recepção',
     description: 'Ambiente acolhedor e moderno para sua chegada',
   },
   {
-    url: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2070&q=80',
+    url: AreaTrabalho,
     title: 'Área de Trabalho',
     description: 'Equipamentos de última geração e ambiente esterilizado',
   },
   {
-    url: 'https://images.unsplash.com/photo-1600585153943-205fa521e20c?auto=format&fit=crop&w=2070&q=80',
+    url: SalaConsulta,
     title: 'Sala de Consulta',
     description: 'Espaço privativo para planejamento da sua arte',
   },
