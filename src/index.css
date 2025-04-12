@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Inter:wght@400;500;600&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -10,11 +12,43 @@
 }
 
 body {
-  @apply bg-primary text-white;
+  font-family: 'Inter', sans-serif;
+}
+
+h1, h2, h3, .font-display {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600;
 }
 
 /* ================================
- 🌀 Swiper Customization
+ 🎯 Utility Classes
+================================ */
+.section-container {
+  @apply w-full 
+         max-w-[90rem] xl:max-w-[96rem] 2xl:max-w-[110rem] 
+         px-4 sm:px-6 lg:px-12 
+         py-12 
+         bg-black/50 backdrop-blur-sm 
+         rounded-2xl shadow-xl;
+}
+
+/* ================================
+ 🏗️ Z-Index Layers
+================================ */
+@layer utilities {
+  .z-layer-behind { z-index: -10; }
+  .z-layer-base { z-index: 0; }
+  .z-layer-content { z-index: 10; }
+  .z-layer-section { z-index: 20; }
+  .z-layer-header { z-index: 50; }
+  .z-layer-modal { z-index: 1000; }
+  .z-layer-modal-overlay { z-index: 1001; }
+  .z-layer-expanded-image { z-index: 1010; }
+  .z-layer-whatsapp { z-index: 1020; }
+}
+
+/* ================================
+ 🌀 Swiper Customization (VirtualTour)
 ================================ */
 .swiper-pagination-bullet {
   @apply transition-opacity duration-300;
@@ -26,7 +60,7 @@ body {
 }
 
 /* ================================
- 🖼️ Image Gallery Customization
+ 🖼️ Image Gallery Customization (Artists)
 ================================ */
 .artist-gallery {
   width: 100%;
@@ -65,7 +99,7 @@ body {
 }
 
 /* ================================
- 🛠️ Scrollbars
+ 🛠️ Scrollbars Custom
 ================================ */
 .custom-scrollbar,
 .custom-scrollbar-amber {
@@ -91,21 +125,6 @@ body {
 }
 
 /* ================================
- 🏗️ Z-Index Layers
-================================ */
-@layer utilities {
-  .z-layer-behind { z-index: -10; }
-  .z-layer-base { z-index: 0; }
-  .z-layer-content { z-index: 10; }
-  .z-layer-section { z-index: 20; }
-  .z-layer-header { z-index: 50; }
-  .z-layer-modal { z-index: 1000; }
-  .z-layer-modal-overlay { z-index: 1001; }
-  .z-layer-expanded-image { z-index: 1010; }
-  .z-layer-whatsapp { z-index: 1020; }
-}
-
-/* ================================
  🖥️ Modal Layout (Gold Ink Style)
 ================================ */
 .modal-container {
@@ -128,11 +147,33 @@ body {
 }
 
 /* ================================
- 🎯 Modal Overlay
+ 🎯 Modal Overlay + Expanded Image
 ================================ */
 @layer components {
   .modal-overlay {
     @apply fixed inset-0 z-layer-modal flex justify-center items-center 
-           bg-black/60 backdrop-blur-md p-4 py-12 overflow-y-auto;
-  } 
+           bg-black/60 backdrop-blur-md px-4 py-4 overflow-y-auto;
+  }
+
+  @media (max-width: 768px) {
+    body.modal-open .whatsapp-button {
+      display: none !important;
+    }
+  }
+
+  /* Expanded image modal fixes */
+  .expanded-image-container {
+    @apply relative max-w-[90vw] max-h-[85vh] w-full mx-auto;
+  }
+
+  .expanded-image {
+    @apply w-full h-auto object-contain rounded-lg;
+    touch-action: manipulation;
+  }
+
+  .expanded-image-close {
+    @apply absolute top-4 right-4 z-20 p-2 
+           rounded-full bg-black/60 hover:bg-black/80 
+           border border-amber-500 transition;
+  }
 }

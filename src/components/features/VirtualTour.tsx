@@ -11,38 +11,36 @@ const tourImages = [
   {
     url: 'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=2070&q=80',
     title: 'Recepção',
-    description: 'Ambiente acolhedor e moderno para sua chegada'
+    description: 'Ambiente acolhedor e moderno para sua chegada',
   },
   {
     url: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2070&q=80',
     title: 'Área de Trabalho',
-    description: 'Equipamentos de última geração e ambiente esterilizado'
+    description: 'Equipamentos de última geração e ambiente esterilizado',
   },
   {
     url: 'https://images.unsplash.com/photo-1600585153943-205fa521e20c?auto=format&fit=crop&w=2070&q=80',
     title: 'Sala de Consulta',
-    description: 'Espaço privativo para planejamento da sua arte'
-  }
+    description: 'Espaço privativo para planejamento da sua arte',
+  },
 ];
 
 export function VirtualTour() {
   const { ref, inView } = useInView({ threshold: 0.1, triggerOnce: true });
 
   return (
-    <section ref={ref} className="relative z-layer-section py-24 bg-black/30">
-      <div className="container mx-auto px-4">
-        {/* Título e descrição */}
+    <section ref={ref} className="py-28">
+      <div className="mx-auto max-w-[1440px] px-6 section-container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
           className="text-center mb-12"
         >
-          <h2 className="text-4xl font-display mb-4">Conheça Nosso Espaço</h2>
-          <p className="text-gray-400">Um ambiente projetado para sua arte e conforto</p>
+          <h2 className="text-4xl font-display mb-4">Nosso Espaço</h2>
+          <p className="text-gray-400">Um ambiente projetado para sua arte</p>
         </motion.div>
 
-        {/* Galeria de imagens */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={inView ? { opacity: 1 } : {}}
